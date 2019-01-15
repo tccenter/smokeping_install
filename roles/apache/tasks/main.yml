@@ -1,0 +1,10 @@
+---
+# tasks file for apache2
+- block:
+  - name: Install apache2
+    apt:
+      name: apache2
+
+  - name: Enable module cgi module
+    shell: a2enmod cgi
+  when: ansible_facts['distribution'] == 'Ubuntu'

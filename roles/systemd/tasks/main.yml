@@ -1,0 +1,13 @@
+---
+# tasks file for systemd
+- block:
+  - name: Make sure a service is running
+    systemd:
+      state: restarted
+      name: smokeping
+
+  - name: Make sure a service is running
+    systemd:
+      state: restarted
+      name: apache2
+  when: ansible_facts['distribution'] == 'Ubuntu'

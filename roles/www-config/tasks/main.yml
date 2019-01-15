@@ -1,0 +1,7 @@
+---
+# tasks file for template
+- block:
+  - template:
+      src: ../templates/smokeping.j2
+      dest: /etc/apache2/conf-available/smokeping.conf
+  when: ansible_facts['distribution'] == 'Ubuntu'

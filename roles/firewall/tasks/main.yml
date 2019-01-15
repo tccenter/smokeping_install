@@ -1,0 +1,15 @@
+---
+# tasks file for ufw
+- block:
+  - name: Allow all access to tcp port 80
+    ufw:
+      rule: allow
+      port: 80
+      proto: tcp
+
+  - name: Allow all access to tcp port 443
+    ufw:
+      rule: allow
+      port: 443
+      proto: tcp
+  when: ansible_facts['distribution'] == 'Ubuntu'

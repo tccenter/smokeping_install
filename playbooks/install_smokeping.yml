@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+
+  roles:
+    - role: ../roles/upgrade
+      tags: upgrade
+
+    - role: ../roles/apache
+      tags: apache
+
+    - role: ../roles/firewall
+      tags: firewall
+
+    - role: ../roles/smokeping
+      tags: smokeping
+
+    - role: ../roles/www-config
+      tags: www-config
+
+    - role: ../roles/systemd
+      tags: systemd
