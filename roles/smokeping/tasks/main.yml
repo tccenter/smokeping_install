@@ -9,13 +9,11 @@
       - smokeping
       - sendmail
 
-  # - name: Copy .cgi file
-  #   copy:
-  #     src: /usr/share/smokeping/smokeping.cgi
-  #     dest: /usr/share/smokeping/www/smokeping.cgi
+  - name: Copy .cgi file
+    shell: sudo cp /usr/share/smokeping/smokeping.cgi /usr/share/smokeping/www/smokeping.cgi
 
-  - shell: id
-    register: id
-
-  - debug: var=id
+  # - shell: id
+  #   register: id
+  #
+  # - debug: var=id
   when: ansible_facts['distribution'] == 'Ubuntu'
